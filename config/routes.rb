@@ -1,4 +1,9 @@
 OctoDangerzone::Application.routes.draw do
+  resources :galleries do
+    resources :pictures
+  end
+
+
   resources :posts do
     resources :comments
   end

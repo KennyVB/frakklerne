@@ -51,6 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :home, 'Hjem', root_path
     primary.item :post, 'Post', posts_path
+    primary.item :gallery, 'Gallery', galleries_path
 
     # Add an item which has a sub navigation (same params, but with block)
     #primary.item :key_2, 'name', url, options do |sub_nav|

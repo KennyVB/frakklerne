@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @gallery.name %>
+</p>
+<h2>Pictures:</h2>
+<%= render @gallery.pictures %>
+ 
+<h2>Add a picture:</h2>
+<%= render "pictures/form" %>
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>

@@ -1,0 +1,11 @@
+<p>
+  <b>Name:</b>
+  <%= picture.name %>
+</p>
+
+ 
+<p>
+  <%= link_to 'Destroy Pciture', [picture.gallery, picture],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>
