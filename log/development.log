@@ -4757,3 +4757,81 @@ Served asset /posts.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-17 19:02:15 +0100
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2012-12-17 19:04:40 +0100
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/index.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Article):
+    1: <h1>Post</h1>
+    2: <div id="tag_cloud">
+    3:   <% tag_cloud Article.tag_counts, %w{s m l} do |tag, css_class| %>
+    4:     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+    5:   <% end %>
+    6: </div>
+  app/views/posts/index.html.erb:3:in `_app_views_posts_index_html_erb___1233271693675619536_70199193893520'
+  app/controllers/posts_controller.rb:9:in `index'
+
+
+  Rendered /Users/kennyvb/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/kennyvb/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/kennyvb/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN posts ON posts.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Post' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT posts.id FROM "posts" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered posts/index.html.erb within layouts/application (14.0ms)
+Compiled posts.css  (81ms)  (pid 29090)
+Compiled application.css  (2ms)  (pid 29090)
+Completed 200 OK in 143ms (Views: 141.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /application.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /posts.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
+Served asset /application.js - 304 Not Modified (0ms)
