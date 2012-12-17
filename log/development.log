@@ -4835,3 +4835,243 @@ Served asset /posts.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-17 19:04:57 +0100
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (3.8ms)
+  Rendered posts/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-17 19:07:54 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2012-12-17 19:08:04 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered posts/show.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x007fb10d62b7e8>:0x007fb10f7e2fd0>):
+    15:   <%= @post.content %>
+    16: </p>
+    17:  
+    18:  <p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+    19:  
+    20: <h2>Comments</h2>
+    21: <%= render @post.comments %>
+  app/views/posts/show.html.erb:18:in `_app_views_posts_show_html_erb___1453511775414194099_70199222931060'
+  app/controllers/posts_controller.rb:20:in `show'
+
+
+  Rendered /Users/kennyvb/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/kennyvb/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/kennyvb/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (3.1ms)
+  Rendered posts/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:18 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/post" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Processing by PostsController#index as HTML
+  Parameters: {"tag"=>"post"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (lower(name) = 'post')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN posts ON posts.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Post' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT posts.id FROM "posts" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" JOIN taggings posts_taggings_adc532a ON posts_taggings_adc532a.taggable_id = posts.id AND posts_taggings_adc532a.taggable_type = 'Post' AND posts_taggings_adc532a.tag_id = 2[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Post' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered posts/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 68ms (Views: 65.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-17 19:08:20 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /comments.css - 200 OK (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /posts.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-12-17 19:18:52 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
