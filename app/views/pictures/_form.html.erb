@@ -1,7 +1,7 @@
-<%= form_for([@gallery, @gallery.pictures.build]) do |f| %>
+<%= form_for([@gallery, @gallery.pictures.build], :html => {:multipart => true}) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_area :name %>
+    <%= f.text_field :name %>
   </div>
   <div class="actions">
     <%= f.submit %>
