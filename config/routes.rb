@@ -3,6 +3,8 @@ OctoDangerzone::Application.routes.draw do
     resources :comments
   end
 
+  get 'tags/:tag' => 'posts#index', as: :tag
+
   get "home/index"
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}

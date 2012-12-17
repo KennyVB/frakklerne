@@ -44,3 +44,4 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'simple-navigation'
+gem 'acts-as-taggable-on'
