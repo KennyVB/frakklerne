@@ -1,4 +1,8 @@
 class Post < ActiveRecord::Base
+  
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
+
   attr_accessible :content, :name, :title, :tag_list
   acts_as_taggable
   
@@ -7,5 +11,6 @@ class Post < ActiveRecord::Base
                     :length => { :minimum => 5 }
                     
   has_many :comments, :dependent => :destroy
+
 
 end
