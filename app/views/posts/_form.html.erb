@@ -1,4 +1,4 @@
-<%= form_for(@post) do |post_form| %>
+<%= form_for(@post, :html => { :multipart => true }) do |f| %>
   <% if @post.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,22 +11,45 @@
   <% end %>
  
   <div class="field">
-    <%= post_form.label :name %><br />
-    <%= post_form.text_field :name %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= post_form.label :title %><br />
-    <%= post_form.text_field :title %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= post_form.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= post_form.text_field :tag_list %>
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
   </div>
   <div class="field">
-    <%= post_form.label :content %><br />
-    <%= post_form.text_area :content %>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
   </div>
+  
+  <%= f.fields_for :assets do |asset_fields| %>
+  	
+  <% if asset_fields.object.new_record? %>
+	
+  <p>
+	  <%= asset_fields.file_field :asset %>
+  </p>
+  
+  <% end %>
+  <% end %>
+  
+  <%= f.fields_for :assets do |asset_fields| %>
+  
+  <% unless asset_fields.object.new_record? %>
+  
+  <p>
+	  <%= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original)%>
+	  <%= asset_fields.check_box :_destroy %>
+  </p>
+	  <% end %>
+	  <% end %>
+  
   <div class="actions">
-    <%= post_form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

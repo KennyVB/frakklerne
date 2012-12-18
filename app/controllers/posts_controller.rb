@@ -27,7 +27,7 @@ end
   # GET /posts/new.json
   def new
     @post = Post.new
-
+    5.times { @post.assets.build }
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
@@ -37,6 +37,7 @@ end
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    5.times { @post.assets.build }
   end
 
   # POST /posts

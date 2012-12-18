@@ -17,6 +17,15 @@
  
  <p>Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
  
+ <div class="thumb">
+ 
+ <% for asset in @post.assets %>
+ 
+<%= link_to image_tag(asset.asset.url(:thumb)), asset.asset.url(:original)%>
+ <% end %>
+ 
+</div>
+
 <h2>Comments</h2>
 <%= render @post.comments %>
  
