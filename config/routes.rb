@@ -6,6 +6,7 @@ OctoDangerzone::Application.routes.draw do
 
   resources :posts do
     resources :comments
+    resources :postimage
   end
 
   get 'tags/:tag' => 'posts#index', as: :tag
