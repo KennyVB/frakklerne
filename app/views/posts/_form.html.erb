@@ -26,7 +26,6 @@
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </div>
-  <% @post.image.build if @post.image.blank? %>
   
   <p>
     <%= f.file_field :image %>
