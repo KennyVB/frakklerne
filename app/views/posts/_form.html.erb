@@ -26,16 +26,20 @@
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </div>
+  <% @post.image.build if @post.image.blank? %>
+  
   <p>
     <%= f.file_field :image %>
   </p>
-<%= link_to image_tag(@post.image_url(:thumb)), @post.image.url(:original), :class => 'postimage'%>
-<label>
 
+  
+  <%= f.hidden_field :image_cache %>
+<%= link_to image_tag(@post.image_url(:thumb)), @post.image.url(:original), :class => 'postimage'%>
+
+<label>
 <%= f.check_box :remove_image, :label => 'Delete Image' %>
 Delete Image
-
-</labet>
+</label>
   <div class="actions">
     <%= f.submit %>
   </div>

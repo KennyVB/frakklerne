@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 
-  attr_accessible :content, :name, :title, :tag_list, :image, :remove_image
+  attr_accessible :content, :name, :title, :tag_list, :image, :remove_image, :image_cache
   acts_as_taggable
   
   validates :name,  :presence => true
