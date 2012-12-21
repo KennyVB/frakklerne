@@ -45,10 +45,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'simple-navigation'
 gem 'acts-as-taggable-on'
-<<<<<<< HEAD
 gem 'paperclip'
-=======
 gem 'carrierwave'
 gem 'rmagick'
 gem 'friendly_id'
->>>>>>> merge-with-paperclip-1
+

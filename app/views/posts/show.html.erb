@@ -16,11 +16,10 @@
 </p>
 <p>
     <b>Pictures:</b>
-    <%= link_to image_tag(@post.image_url(:thumb)), @post.image.url(:original), :class => 'postimage'%>
+  
 </p>
  <p>Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
  
-<<<<<<< HEAD
  <div class="thumb">
  
  <% for asset in @post.assets %>
@@ -30,14 +29,6 @@
  
 </div>
 
-=======
-
- 
- 
- 
-
- 
->>>>>>> merge-with-paperclip-1
 <h2>Comments</h2>
 <%= render @post.comments %>
  
