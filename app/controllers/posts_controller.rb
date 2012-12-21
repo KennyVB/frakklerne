@@ -21,6 +21,9 @@ end
       format.html # show.html.erb
       format.json { render json: @post }
     end
+    if request.path != post_path(@post)
+        redirect_to @post, status: :moved_permanently
+      end
   end
 
   # GET /posts/new
@@ -44,7 +47,7 @@ end
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -60,7 +63,6 @@ end
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }

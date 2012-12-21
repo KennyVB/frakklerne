@@ -1,14 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @gallery.name %>
+  <b>Gallery:</b>
+  <h2><%= @gallery.name %></h2>
 </p>
-<h2>Pictures:</h2>
-<%= render @gallery.pictures %>
+
+<% @gallery.pictures.each do |picture|%>
+<p>
+  <b>Picture name:</b>
+  <%= picture.name %>
+</p>
+
+<%= link_to (image_tag (picture.image_url(:thumb))), picture.image.url(:original), :class => 'picture' %>
+
+<p>
+<%= link_to 'Destroy Picture', [picture.gallery, picture],
+             :confirm => 'Are you sure?',
+             :method => :delete %>
+		 </p>
+		 
+ <% end %>
  
 <h2>Add a picture:</h2>
 <%= render "pictures/form" %>
 
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %>
+
+
