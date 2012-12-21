@@ -9,6 +9,7 @@
     <h2><%= link_to post.title, post %></h2>
     <%= simple_format post.content %>
 	<p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+	
     <p><%= link_to "Edit Post", edit_post_path(post) %></p>
 	<p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   <% end %>
