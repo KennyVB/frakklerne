@@ -14,17 +14,20 @@
 <%= link_to (image_tag (picture.image_url(:thumb))), picture.image.url(:original), :class => 'lightview' %>
 
 <p>
+	<% if can? :destroy, @picture %>
 <%= link_to 'Destroy Picture', [picture.gallery, picture],
              :confirm => 'Are you sure?',
              :method => :delete %>
 		 </p>
-		 
+		 <% end %>
  <% end %>
- 
+ <% if can? :create, @picture %>
 <h2>Add a picture:</h2>
 <%= render "pictures/form" %>
-
+<% end %>
+<% if can? :update, @gallery %>
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<% end %> 
 <%= link_to 'Back', galleries_path %>
 
 

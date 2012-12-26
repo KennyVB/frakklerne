@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  load_and_authorize_resource
   def create
     @gallery = Gallery.find(params[:gallery_id])
     @picture = @gallery.pictures.create(params[:picture])

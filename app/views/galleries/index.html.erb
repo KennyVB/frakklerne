@@ -12,12 +12,17 @@
   <tr>
     <td><%= gallery.name %></td>
     <td><%= link_to 'Show', gallery %></td>
+	<% if can? :update, @gallery %>
     <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+	<% end %>
+	<% if can? :destroy, @gallery %>
     <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<% if can? :create, @gallery %>
 <%= link_to 'New Gallery', new_gallery_path %>
+<% end %>
