@@ -49,4 +49,4 @@ gem 'paperclip'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'friendly_id'
-
+gem 'thin'
