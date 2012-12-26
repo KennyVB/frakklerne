@@ -12,9 +12,17 @@ OctoDangerzone::Application.routes.draw do
 
   get "home/index"
 
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :path => "d"
+  resources :users
+  
   root :to => 'home#index'
+  
+  namespace :admin do
+  	match '/' => 'users#index'
+  	resources :users
+  end
+   match '/profiles/dashboard' => 'profiles#dashboard', :as => :user_root
+   resources :profiles, :only => [:dashboard]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
