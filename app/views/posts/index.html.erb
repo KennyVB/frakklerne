@@ -1,9 +1,15 @@
 <h1>Post</h1>
+
+<% if can? :create, @post %>
+<p><%= link_to "New Post", new_post_path %></p>
+<% end %>
+
 <div id="tag_cloud">
   <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
+
 <div id="post">
   <% @posts.each do |post| %>
   
@@ -24,6 +30,3 @@
   <% end %>
 </div>
 
-<% if can? :create, @post %>
-<p><%= link_to "New Post", new_post_path %></p>
-<% end %>
