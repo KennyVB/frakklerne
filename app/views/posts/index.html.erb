@@ -6,17 +6,24 @@
 </div>
 <div id="post">
   <% @posts.each do |post| %>
+  
     <h2><%= link_to post.title, post %></h2>
-    <%= simple_format post.content %>
+	
+    <%= truncate_html simple_format post.content %>
+	
 	<p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+	
 	<% if can? :update, @post %>
     <p><%= link_to "Edit Post", edit_post_path(post) %></p>
 	<% end %>
+	
 	<% if can? :destroy, @post %>
 	<p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   <% end %>
+  
   <% end %>
 </div>
+
 <% if can? :create, @post %>
 <p><%= link_to "New Post", new_post_path %></p>
 <% end %>
