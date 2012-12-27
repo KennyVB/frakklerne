@@ -21,6 +21,7 @@ OctoDangerzone::Application.routes.draw do
   	match '/' => 'users#index'
   	resources :users
   end
+  
    match '/profiles/dashboard' => 'profiles#dashboard', :as => :user_root
    resources :profiles, :only => [:dashboard]
   
