@@ -25,6 +25,8 @@
 		    <% end %>
 		  </div>
 <%= yield %>
-
+<div id="language-selector"><%= link_to_unless_current "English", locale: "en" %> |
+	<%= link_to_unless_current "Dansk", locale: "da" %>
+</div>
 </body>
 </html>

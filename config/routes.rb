@@ -1,4 +1,5 @@
 OctoDangerzone::Application.routes.draw do
+  
   resources :galleries do
     resources :pictures
   end
@@ -8,6 +9,8 @@ OctoDangerzone::Application.routes.draw do
     resources :comments
   end
 
+
+
   get 'tags/:tag' => 'posts#index', as: :tag
 
   get "home/index"
@@ -15,8 +18,9 @@ OctoDangerzone::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :path => "d"
   resources :users
   
-  root :to => 'home#index'
-  
+ 
+
+
   namespace :admin do
   	match '/' => 'users#index'
   	resources :users
@@ -24,6 +28,15 @@ OctoDangerzone::Application.routes.draw do
   
    match '/profiles/dashboard' => 'profiles#dashboard', :as => :user_root
    resources :profiles, :only => [:dashboard]
+  
+   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+   root :to => 'home#index'
+ end
+  
+   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+   match '', to: redirect("/#{I18n.default_locale}")
+  
+ 
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

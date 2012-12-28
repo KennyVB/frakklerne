@@ -22,9 +22,9 @@ end
       format.html # show.html.erb
       format.json { render json: @post }
     end
-    if request.path != post_path(@post)
-        redirect_to @post, status: :moved_permanently
-      end
+   #if request.path != post_path(@post)
+   #    redirect_to @post, status: :moved_permanently
+   #  end
   end
 
   # GET /posts/new

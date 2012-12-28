@@ -1,14 +1,16 @@
 <h1>Post</h1>
 
 <% if can? :create, @post %>
-<p><%= link_to "New Post", new_post_path %></p>
+<p><%= link_to t(".new"), new_post_path %></p>
 <% end %>
 
-<div id="tag_cloud">
+<div id="tag_cloud"><%= t".Tags Cloud" %>
   <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+   <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
+
+<hr />
 
 <div id="post">
   <% @posts.each do |post| %>
@@ -19,12 +21,16 @@
 	
 	<p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 	
+	<div id="comments-count">
+		<%= "(#{post.comments.count})" %>
+	</div>
+	
 	<% if can? :update, @post %>
-    <p><%= link_to "Edit Post", edit_post_path(post) %></p>
+    <p><%= link_to t(".edit"), edit_post_path(post) %></p>
 	<% end %>
 	
 	<% if can? :destroy, @post %>
-	<p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	<p><%= link_to t(".destroy"), post, method: :delete, data: { confirm: t(".Are you sure?") } %></p>
   <% end %>
   
   <% end %>

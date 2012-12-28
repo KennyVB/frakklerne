@@ -20,9 +20,9 @@ class GalleriesController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @gallery }
     end
-    if request.path != gallery_path(@gallery)
-        redirect_to @gallery, status: :moved_permanently
-      end
+    #if request.path != gallery_path(@gallery)
+    #    redirect_to @gallery, status: :moved_permanently
+    #  end
   end
 
   # GET /galleries/new

@@ -1,8 +1,8 @@
-<h1>Listing galleries</h1>
+<h1><%= t ".title" %></h1>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th><%= t ".name" %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +13,10 @@
     <td><%= gallery.name %></td>
     <td><%= link_to 'Show', gallery %></td>
 	<% if can? :update, @gallery %>
-    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+    <td><%= link_to t(".edit"), edit_gallery_path(gallery) %></td>
 	<% end %>
 	<% if can? :destroy, @gallery %>
-    <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t(".destroy"), gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	<% end %>
   </tr>
 <% end %>
