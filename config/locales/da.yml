@@ -128,17 +128,34 @@ da:
     application:
         signed in as: "Logged in som"
         Not you?: "Ikke dig?"
+        Sign out: "Log ud"
+        Edit profile: "Redigere Profil"
+        Sign up: "Opret Bruger"
+        Sign in: "Log ind"
+    admin:
+        signed in as: "Logged in som"
+        Not you?: "Ikke dig?"
+        Sign out: "Log ud"
+        Edit profile: "Redigere Profil"
+        Sign up: "Opret Bruger"
+        Sign in: "Log ind"
   galleries: 
     index: 
       name: "Galleri navn"
       title: "Galleri"
+      Are you sure?: "Er du sikker?"
   posts:
     index:
       new: "Opret ny Post"
       edit: "Redigere Post"
       destroy: "Slet Post"
       Are you sure?: "Er du sikker?"
-      Tags Cloud: "Tags Cloud:"
+      Tags Cloud: "Tags Sky:"
+  devise:
+    registrations:
+      edit:
+        (leave blank if you dont want to change it): "(Efterlad blank, hvis du ikke ønsker at ændre kode)"
+        (we need your current password to confirm your changes): "(Vi skal bruge dit nuværende kode for at bekræfte dine ændringere)"
   helpers: 
     select: 
       prompt: Vælg...
@@ -146,6 +163,13 @@ da:
       create: "Opret %{model}"
       submit: "Gem %{model}"
       update: "Opdater %{model}"
+  activerecord:
+    attributes:
+      user:
+        username: "Brugernavn"
+        password: "Kode"
+        password_confirmation: "Kode igen"
+        current_password: "Nuværende Kode"
   number: 
     currency: 
       format: 

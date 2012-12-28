@@ -1,5 +1,5 @@
 TruncateHtml.configure do |config|
   config.length       = 160
-  config.omission     = '...(continued)'
+  config.omission     = '...'
   config.word_boundary = false
 end
