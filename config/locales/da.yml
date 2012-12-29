@@ -132,6 +132,10 @@ da:
         Edit profile: "Redigere Profil"
         Sign up: "Opret Bruger"
         Sign in: "Log ind"
+        Home: "Hjem"
+        Post: "Post"
+        Gallery: "Galleri"
+        or: " Eller "
     admin:
         signed in as: "Logged in som"
         Not you?: "Ikke dig?"
@@ -139,6 +143,10 @@ da:
         Edit profile: "Redigere Profil"
         Sign up: "Opret Bruger"
         Sign in: "Log ind"
+        Home: "Hjem"
+        Post: "Post"
+        Gallery: "Galleri"
+        or: " Eller "
   galleries: 
     index: 
       name: "Galleri navn"
@@ -156,6 +164,10 @@ da:
       edit:
         (leave blank if you dont want to change it): "(Efterlad blank, hvis du ikke ønsker at ændre kode)"
         (we need your current password to confirm your changes): "(Vi skal bruge dit nuværende kode for at bekræfte dine ændringere)"
+        Cancel my account: "Slet min Konto"
+        Unhappy?: "Utilfreds?"
+        Are you sure?: "Er du sikker?"
+        Back: "Tilbage"
   helpers: 
     select: 
       prompt: Vælg...

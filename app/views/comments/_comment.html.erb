@@ -7,9 +7,10 @@
   <b>Comment:</b>
   <%= comment.body %>
 </p>
- 
+ <% if can? :destroy, @comment %>
 <p>
   <%= link_to 'Destroy Comment', [comment.post, comment],
                :confirm => 'Are you sure?',
                :method => :delete %>
 </p>
+<% end %>

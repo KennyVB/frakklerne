@@ -18,7 +18,7 @@ OctoDangerzone::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :path => "d"
   resources :users
   
- 
+  get 'galleries/fragglerne', :as => 'fragglerne'
 
 
   namespace :admin do
