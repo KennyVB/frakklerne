@@ -193,6 +193,7 @@ da:
         password: "Kode"
         password_confirmation: "Kode igen"
         current_password: "Nuværende Kode"
+        remember_me: "Husk mig"
       post:
         name: "Navn"
         title: "Titel"
