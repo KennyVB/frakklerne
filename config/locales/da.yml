@@ -160,6 +160,10 @@ da:
       Pictures: "Billeder"
       Comments: "Kommentar"
       Add a comment: "Tilføj en kommentar"
+      Edit Post: "Redigere Post"
+      Back to Posts: "Tilbage til Post"
+    form:
+      Destroy: "Slet"
     index:
       new: "Opret ny Post"
       edit: "Redigere Post"
@@ -189,6 +193,11 @@ da:
         password: "Kode"
         password_confirmation: "Kode igen"
         current_password: "Nuværende Kode"
+      post:
+        name: "Navn"
+        title: "Titel"
+        tag_list: "Tag list (adskilt af kommaer)"
+        content: "Tekst"
   number: 
     currency: 
       format: 
