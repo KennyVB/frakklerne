@@ -153,6 +153,13 @@ da:
       title: "Galleri"
       Are you sure?: "Er du sikker?"
   posts:
+    show:
+      Name: "Navn"
+      Title: "Titel"
+      Content: "Tekst"
+      Pictures: "Billeder"
+      Comments: "Kommentar"
+      Add a comment: "Tilføj en kommentar"
     index:
       new: "Opret ny Post"
       edit: "Redigere Post"
@@ -162,7 +169,7 @@ da:
   devise:
     registrations:
       edit:
-        (leave blank if you dont want to change it): "(Efterlad blank, hvis du ikke ønsker at ændre kode)"
+        (leave blank if you dont want to change it): "(Efterlad blank, hvis du IKKE ønsker at ændre kode)"
         (we need your current password to confirm your changes): "(Vi skal bruge dit nuværende kode for at bekræfte dine ændringere)"
         Cancel my account: "Slet min Konto"
         Unhappy?: "Utilfreds?"
