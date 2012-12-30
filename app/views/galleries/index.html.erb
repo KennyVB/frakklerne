@@ -1,28 +1,25 @@
 <h1><%= t ".title" %></h1>
 
-<table>
-  <tr>
-    <th><%= t ".name" %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+ 
 
 <% @galleries.each do |gallery| %>
-  <tr>
-    <td><%= gallery.name %></td>
-    <td><%= link_to 'Show', gallery %></td>
+  
+    <%= gallery.name %>
+    
+    <%= link_to t(".Show"), gallery %>
+    
 	<% if can? :update, @gallery %>
-    <td><%= link_to t(".edit"), edit_gallery_path(gallery) %></td>
+    <%= link_to t(".edit"), edit_gallery_path(gallery) %>
 	<% end %>
+	
 	<% if can? :destroy, @gallery %>
-    <td><%= link_to t(".destroy"), gallery, method: :delete, data: { confirm: t(".Are you sure?") } %></td>
+    <%= link_to t(".destroy"), gallery, method: :delete, data: { confirm: t(".Are you sure?") } %>
 	<% end %>
-  </tr>
+  
 <% end %>
-</table>
+
 
 <br />
 <% if can? :create, @gallery %>
-<%= link_to 'New Gallery', new_gallery_path %>
+<%= link_to t(".New Gallery"), new_gallery_path %>
 <% end %>
