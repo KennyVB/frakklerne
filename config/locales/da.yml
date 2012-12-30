@@ -170,6 +170,9 @@ da:
       destroy: "Slet Post"
       Are you sure?: "Er du sikker?"
       Tags Cloud: "Tags Sky:"
+    edit:
+      Show: "Læs"
+      Back: "Tilbage"
   devise:
     registrations:
       edit:
