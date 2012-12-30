@@ -126,7 +126,7 @@ da:
         other: "%{count} fejl forhindrede %{model} i at blive gemt"
   layouts:
     application:
-        signed in as: "Logged in som"
+        signed in as: "Logged ind som:"
         Not you?: "Ikke dig?"
         Sign out: "Log ud"
         Edit profile: "Redigere Profil"
@@ -137,7 +137,7 @@ da:
         Gallery: "Galleri"
         or: " Eller "
     admin:
-        signed in as: "Logged in som"
+        signed in as: "Logged ind som:"
         Not you?: "Ikke dig?"
         Sign out: "Log ud"
         Edit profile: "Redigere Profil"
@@ -173,6 +173,7 @@ da:
     edit:
       Show: "Læs"
       Back: "Tilbage"
+      Editing: "Redigere"
   devise:
     registrations:
       edit:
